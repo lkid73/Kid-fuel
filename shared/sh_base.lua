@@ -2,7 +2,7 @@ Config = {}
 
 Config.Debug = false
 
-Config.notification = "custom" -- "ox_lib" | "standalone" | "custom"
+Config.notification = "standalone" -- "ox_lib" | "standalone" | "custom"
 
 Config.DefaultTankSize = 65.0
 

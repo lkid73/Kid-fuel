@@ -35,8 +35,6 @@ local function initFuel(vehicle)
     debugPrint(('Initialized fuel %.2f / %.2f'):format(fuel, tank))
 end
 
--- Monitor driven vehicle
-
 CreateThread(function()
     local lastVehicle = nil
     while true do

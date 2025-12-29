@@ -8,7 +8,7 @@ end
 
 function notify(msg, type)
     if Config.notification == "custom" then
-        HUD:DisplayNotification("Fuel Station", msg, type or "info")
+        -- Custom notification logic here
     elseif Config.notification == "ox_lib" then
         lib.notify({
             title = "Fuel Station",
