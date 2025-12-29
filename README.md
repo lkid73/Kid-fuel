@@ -11,3 +11,6 @@ Any bugs can be reported to my [Discord](https://discord.com/invite/MCK7wFwV3q)
 - Put it in your `ressource` folder and ensure it in your `server.cfg`
 # Pull Request
 Pull request for enhancement, features and other edits are very welcomed.
+# To-Do
+- Animation for refuel/recharge
+- Rope and props for refuel/recharge ?
