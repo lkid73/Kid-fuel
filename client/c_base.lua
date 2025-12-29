@@ -30,7 +30,7 @@ local function initFuel(vehicle)
     end
 
     SetVehicleFuelLevel(vehicle, fuel)
-    TriggerServerEvent('fuel:set', VehToNet(vehicle), fuel)
+    TriggerServerEvent('kid-fuel:set', VehToNet(vehicle), fuel)
 
     debugPrint(('Initialized fuel %.2f / %.2f'):format(fuel, tank))
 end
@@ -54,8 +54,8 @@ CreateThread(function()
                 lastVehicle = vehicle
             end
             local fuel = GetVehicleFuelLevel(vehicle)
-            TriggerServerEvent('fuel:set', VehToNet(vehicle), fuel)
-            TriggerServerEvent('fuel:get', VehToNet(vehicle))
+            TriggerServerEvent('kid-fuel:set', VehToNet(vehicle), fuel)
+            TriggerServerEvent('kid-fuel:get', VehToNet(vehicle))
         else
             lastVehicle = nil
         end
@@ -70,18 +70,9 @@ end)
 
 exports('SetFuel', function(vehicle, amount)
     SetVehicleFuelLevel(vehicle, amount)
-    TriggerServerEvent('fuel:set', VehToNet(vehicle), amount)
+    TriggerServerEvent('kid-fuel:set', VehToNet(vehicle), amount)
 end)
 
 exports('GetTankSize', function(vehicle)
     return getTankSize(vehicle)
 end)
-
-function removeStationModels()
-    for _, model in ipairs(Config.FuelStations or {}) do
-        exports.ox_target:removeModel(model)
-    end
-    for _, model in ipairs(Config.EVStations or {}) do
-        exports.ox_target:removeModel(model)
-    end
-end

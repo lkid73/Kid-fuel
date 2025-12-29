@@ -1,6 +1,6 @@
 local Vehicles = {}
 
-RegisterNetEvent('fuel:set', function(netId, fuel)
+RegisterNetEvent('kid-fuel:set', function(netId, fuel)
     local entity = NetworkGetEntityFromNetworkId(netId)
     if not DoesEntityExist(entity) then return end
 
@@ -10,7 +10,7 @@ RegisterNetEvent('fuel:set', function(netId, fuel)
     debugPrint(('Fuel set for %s: %.2f'):format(netId, fuel))
 end)
 
-RegisterNetEvent('fuel:get', function(netId)
+RegisterNetEvent('kid-fuel:get', function(netId)
     local entity = NetworkGetEntityFromNetworkId(netId)
     if not DoesEntityExist(entity) then return end
 

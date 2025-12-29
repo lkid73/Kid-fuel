@@ -24,7 +24,7 @@ end
 
 function debugPrint(msg)
     if Config.Debug then
-        print('[FuelSystem][Station]', msg)
+        print('[Kid-Fuel]', msg)
     end
 end
 

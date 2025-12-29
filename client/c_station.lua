@@ -64,7 +64,7 @@ exports.ox_target:addModel(Config.FuelStations, {
 
             local tank = getTankSize(veh)
             SetVehicleFuelLevel(veh, tank)
-            TriggerServerEvent('fuel:set', VehToNet(veh), tank)
+            TriggerServerEvent('kid-fuel:set', VehToNet(veh), tank)
             notify('Vehicle refueled!', 'success')
         end
     }
@@ -93,9 +93,19 @@ exports.ox_target:addModel(Config.EVStations, {
 
             local battery = getTankSize(veh)
             SetVehicleFuelLevel(veh, battery)
-            TriggerServerEvent('fuel:set', VehToNet(veh), battery)
+            TriggerServerEvent('kid-fuel:set', VehToNet(veh), battery)
             notify('Vehicle recharged!', 'success')
         end
     }
 
 })
+
+
+function removeStationModels()
+    for _, model in ipairs(Config.FuelStations or {}) do
+        exports.ox_target:removeModel(model)
+    end
+    for _, model in ipairs(Config.EVStations or {}) do
+        exports.ox_target:removeModel(model)
+    end
+end
